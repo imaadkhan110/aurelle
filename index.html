@@ -1,0 +1,271 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#17130f">
+<title>AURELLE | The Art of Fine Jewelry</title>
+<meta name="description" content="Discover timeless jewelry, refined gold pieces and unforgettable gifts at AURELLE Fine Jewelry.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--black:#17130f;--gold:#bd995c;--gold2:#dfc69a;--cream:#f5f0e7;--white:#fffdf9;--muted:#8b8174;--line:#e9e0d3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--white);color:var(--black);font-family:"DM Sans",sans-serif}
+body.lock{overflow:hidden}
+button,input,select{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;object-fit:cover}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.announcement{height:32px;display:grid;place-items:center;background:var(--black);color:#e9d8b9;font-size:9px;letter-spacing:2px;text-transform:uppercase;text-align:center;padding:0 8px}
+header{height:78px;padding:0 5%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;background:#fffdf9;border-bottom:1px solid #eee7dc;position:sticky;top:0;z-index:20}
+.brand{font:25px "Playfair Display",serif;letter-spacing:5px;text-align:center;white-space:nowrap}
+.brand small{display:block;font:8px "DM Sans",sans-serif;letter-spacing:4px;margin-top:4px}
+.nav{display:flex;gap:25px;align-items:center}
+.nav a,.nav button{border:0;background:none;padding:10px 0;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;white-space:nowrap}
+.nav a:hover,.nav button:hover{color:var(--gold)}
+.header-right{display:flex;justify-content:flex-end;align-items:center;gap:17px}
+.iconbtn{position:relative;background:none;border:0;padding:7px;font-size:19px;color:var(--black)}
+.count{position:absolute;top:0;right:-3px;background:var(--gold);color:white;border-radius:50%;width:16px;height:16px;font:9px "DM Sans";display:grid;place-items:center}
+.menu-toggle{display:none}
+.hero{min-height:min(710px,78vw);height:650px;max-height:780px;position:relative;display:flex;align-items:center;color:white;background:#272019 url('https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=2200&q=90') center 48%/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,12,8,.83),rgba(16,12,8,.53) 38%,rgba(16,12,8,.08) 78%),linear-gradient(0deg,rgba(15,11,7,.25),transparent 35%)}
+.hero-content{position:relative;z-index:1;padding:60px 8%;max-width:720px;animation:appear 1s ease both}
+.kicker{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold2)}
+.hero h1{font:500 clamp(53px,7.2vw,94px)/1.02 "Playfair Display",serif;letter-spacing:-2px;margin:24px 0}
+.hero h1 em{font-weight:400;color:#dfc69a}
+.hero p{max-width:390px;font-size:13px;line-height:2;color:#eee4d5;margin-bottom:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:20px;background:var(--gold);color:white;border:1px solid var(--gold);padding:16px 23px;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;transition:.25s}
+.btn:hover{background:#9b763f;border-color:#9b763f;transform:translateY(-2px)}
+.btn-light{background:transparent;border-color:#e5d5b8}
+.btn-light:hover{background:white;color:var(--black)}
+.hero-bottom{position:absolute;z-index:2;bottom:24px;left:8%;right:8%;display:flex;justify-content:space-between;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#e8decd}
+.hero-bottom span:last-child{color:#d3bd96}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--line);padding:26px 5%;gap:20px}
+.benefit{text-align:center;font-size:9px;letter-spacing:1.2px;text-transform:uppercase}
+.benefit span{display:block;color:var(--gold);font-size:22px;margin-bottom:8px}
+.section{padding:90px 6%}
+.section-head{text-align:center;margin:0 auto 40px}
+.section-head .kicker{color:var(--gold)}
+.section-head h2{font:500 clamp(33px,4.4vw,52px)/1.15 "Playfair Display",serif;margin:14px 0}
+.section-head p{font-size:12px;line-height:1.9;color:var(--muted);margin:0}
+.collections{display:grid;grid-template-columns:1.1fr .9fr .9fr;gap:16px}
+.collection{position:relative;height:430px;overflow:hidden;background:#ded5c8}
+.collection:first-child{height:490px}
+.collection img{height:100%;transition:transform .8s}
+.collection:hover img{transform:scale(1.06)}
+.collection:after{content:"";position:absolute;inset:40% 0 0;background:linear-gradient(transparent,rgba(0,0,0,.68))}
+.collection-copy{position:absolute;bottom:26px;left:25px;right:20px;color:white;z-index:1}
+.collection-copy small{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#e3c997}
+.collection-copy h3{font:32px "Playfair Display",serif;margin:9px 0 17px}
+.collection-copy a{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;border-bottom:1px solid #d5bc8d;padding-bottom:6px}
+.shop-section{background:#f8f4ed}
+.shopbar{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:26px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filter{background:transparent;border:1px solid #dcd2c3;padding:10px 15px;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#6e6458}
+.filter.active,.filter:hover{background:var(--black);border-color:var(--black);color:white}
+.sort{border:1px solid #ded4c7;background:transparent;padding:10px;font-size:10px;max-width:145px}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px 17px}
+.product{min-width:0;animation:appear .4s ease both}
+.product-image{position:relative;aspect-ratio:4/5;overflow:hidden;background:#eee5d8}
+.product-image img{height:100%;transition:transform .55s}
+.product:hover .product-image img{transform:scale(1.045)}
+.pill{position:absolute;top:12px;left:12px;background:rgba(255,253,249,.94);padding:7px 9px;font-size:8px;letter-spacing:1px;text-transform:uppercase}
+.wishlist{position:absolute;right:10px;top:8px;width:34px;height:34px;border:0;border-radius:50%;background:#fffdf9e8;font-size:20px}
+.wishlist.selected{color:#a34d46}
+.quick{position:absolute;bottom:10px;left:10px;right:10px;width:calc(100% - 20px);padding:13px 5px;border:0;background:rgba(255,253,249,.96);font-size:9px;letter-spacing:1.4px;text-transform:uppercase;transition:.2s}
+.quick:hover{background:var(--black);color:white}
+.product-info{padding:14px 1px}
+.stars{color:var(--gold);font-size:10px;letter-spacing:1px;margin-bottom:8px}
+.product-info h3{font:20px "Playfair Display",serif;margin:0 0 6px}
+.product-info p{font-size:10px;color:var(--muted);margin:0 0 10px}
+.price{font-size:12px;font-weight:600}
+.oldprice{font-size:10px;font-weight:400;color:#a99c8b;text-decoration:line-through;margin-left:7px}
+.center{text-align:center;margin-top:38px}
+.story{display:grid;grid-template-columns:1fr 1fr;background:var(--cream)}
+.story-image{min-height:560px;background:url('https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1200&q=90') center/cover}
+.story-copy{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:11%}
+.story-copy .kicker{color:var(--gold)}
+.story-copy h2{font:500 clamp(38px,4.7vw,59px)/1.12 "Playfair Display",serif;margin:20px 0}
+.story-copy p{font-size:12px;color:#776c5e;line-height:2.1;max-width:430px;margin:0 0 28px}
+.story-copy .btn{margin-top:0}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;text-align:center;padding:58px 7%;border-bottom:1px solid var(--line)}
+.value span{font-size:25px;color:var(--gold)}
+.value h3{font:22px "Playfair Display",serif;margin:12px 0}
+.value p{font-size:11px;line-height:1.8;color:var(--muted);max-width:250px;margin:auto}
+.testimonial{padding:85px 8%;background:var(--black);color:#f7efe3;text-align:center}
+.testimonial .stars{font-size:12px}
+.testimonial blockquote{font:clamp(24px,3.3vw,39px)/1.5 "Playfair Display",serif;max-width:800px;margin:24px auto}
+.testimonial small{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#d1b886}
+.newsletter{background:#eee5d8;padding:75px 20px;text-align:center}
+.newsletter h2{font:42px "Playfair Display",serif;margin:13px 0}
+.newsletter p{font-size:11px;color:var(--muted);line-height:1.8}
+.signup{display:flex;max-width:440px;margin:25px auto 0;border-bottom:1px solid #a99a84}
+.signup input{min-width:0;flex:1;background:transparent;border:0;padding:14px 4px;font-size:11px;outline:none}
+.signup button{border:0;background:transparent;padding:10px;font-size:9px;letter-spacing:1.5px;text-transform:uppercase}
+footer{background:#17130f;color:#e9decd;padding:55px 6% 22px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:35px}
+.footer-brand{font:25px "Playfair Display",serif;letter-spacing:4px}
+.footer-grid p{font-size:11px;line-height:2;color:#b7aa97;max-width:280px}
+.footer-grid h4{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#d2b47e;margin:5px 0 20px}
+.footer-grid a{display:block;color:#c7bbab;font-size:11px;margin:13px 0}
+.footer-grid a:hover{color:white}
+.socials{display:flex;gap:12px}
+.socials a{border:1px solid #4b4031;padding:9px}
+.copyright{display:flex;justify-content:space-between;gap:15px;border-top:1px solid #40372b;margin-top:40px;padding-top:20px;font-size:9px;color:#a89b89}
+.overlay{position:fixed;inset:0;background:#100d09a6;z-index:29;opacity:0;pointer-events:none;transition:.25s}
+.overlay.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);background:var(--white);z-index:30;transform:translateX(105%);transition:transform .32s;display:flex;flex-direction:column;padding:25px}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:17px}
+.drawer-head h2{font:29px "Playfair Display",serif;margin:0}
+.close{border:0;background:transparent;font-size:23px;padding:5px}
+.cart-items{flex:1;overflow:auto}
+.cart-empty{text-align:center;padding:55px 5px;color:var(--muted);font-size:12px;line-height:2}
+.cart-item{display:grid;grid-template-columns:82px 1fr auto;gap:14px;padding:17px 0;border-bottom:1px solid var(--line)}
+.cart-item img{height:100px}
+.cart-item h3{font:18px "Playfair Display",serif;margin:4px 0 9px}
+.cart-item p{font-size:11px;color:var(--muted);margin:0 0 12px}
+.qty{display:flex;align-items:center;gap:12px;font-size:11px}
+.qty button{width:24px;height:24px;border:1px solid var(--line);background:white}
+.remove{border:0;background:transparent;text-decoration:underline;color:var(--muted);font-size:10px;align-self:start}
+.cart-bottom{border-top:1px solid var(--line);padding-top:18px}
+.cart-bottom div{display:flex;justify-content:space-between;font-size:13px;margin-bottom:16px}
+.cart-bottom .btn{width:100%}
+.cart-bottom p{font-size:10px;line-height:1.8;color:var(--muted)}
+.modal{position:fixed;inset:0;z-index:35;display:none;place-items:center;padding:20px}
+.modal.show{display:grid}
+.modal-box{background:var(--white);width:min(750px,100%);max-height:90vh;overflow:auto;position:relative;display:grid;grid-template-columns:1fr 1fr}
+.modal-image{min-height:400px;background:var(--cream)}
+.modal-image img{height:100%;min-height:400px}
+.modal-content{padding:38px 28px;align-self:center}
+.modal-content h2{font:32px "Playfair Display",serif;margin:15px 0}
+.modal-content p{font-size:12px;line-height:2;color:var(--muted)}
+.modal-content .btn{margin-top:22px;width:100%}
+.modal-close{position:absolute;right:12px;top:12px;background:white;border:0;border-radius:50%;width:35px;height:35px;font-size:20px;z-index:2}
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,100px);opacity:0;transition:.3s;background:var(--black);color:white;padding:14px 22px;font-size:11px;z-index:50;text-align:center;max-width:90%;box-shadow:0 8px 30px #0002}
+.toast.show{transform:translate(-50%,0);opacity:1}
+.searchbar{display:none;padding:15px 6%;border-bottom:1px solid var(--line);background:var(--white)}
+.searchbar.open{display:flex;gap:10px}
+.searchbar input{flex:1;min-width:0;border:1px solid var(--line);padding:13px;font-size:12px}
+.searchbar button{border:0;background:var(--black);color:white;padding:0 15px}
+@keyframes appear{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1000px){.quick{transform:translateY(120%)}.product:hover .quick{transform:translateY(0)}}
+@media(max-width:900px){header{padding:0 3%;grid-template-columns:1fr auto 1fr}.nav{gap:12px}.nav a,.nav button{font-size:9px}.product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 14px}.collections{grid-template-columns:1fr 1fr}.collection,.collection:first-child{height:370px}.collection:first-child{grid-column:1/-1;height:430px}.footer-grid{grid-template-columns:1fr 1fr}.hero{height:590px}.story-image{min-height:480px}}
+@media(max-width:620px){.announcement{font-size:8px;letter-spacing:1px}.topbar{height:68px;grid-template-columns:42px 1fr 70px;padding:0 4%}.brand{font-size:21px;letter-spacing:3px}.brand small{font-size:7px;letter-spacing:3px}.menu-toggle{display:block}.nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--white);padding:16px 7% 24px;border-bottom:1px solid var(--line);align-items:stretch;gap:2px}.nav.open{display:flex;flex-direction:column}.nav a,.nav button{text-align:left;padding:13px 0;font-size:11px}.header-right{gap:4px}.hero{height:590px;min-height:0;background-position:59% center}.hero:before{background:linear-gradient(90deg,rgba(15,11,7,.8),rgba(15,11,7,.4) 70%,rgba(15,11,7,.13))}.hero-content{padding:45px 7%}.hero h1{font-size:59px;letter-spacing:-1px}.hero p{font-size:12px;max-width:290px}.hero-bottom{left:7%;right:7%;font-size:8px;letter-spacing:1px}.benefits{grid-template-columns:1fr 1fr;gap:24px 10px;padding:25px 4%}.benefit{font-size:8px}.section{padding:62px 5%}.section-head{margin-bottom:30px}.collections{gap:10px}.collection,.collection:first-child{height:270px;grid-column:auto}.collection:first-child{grid-column:1/-1;height:350px}.collection-copy{bottom:17px;left:14px;right:10px}.collection-copy h3{font-size:25px}.collection-copy small{font-size:8px}.collection-copy a{font-size:8px}.shopbar{align-items:flex-start;flex-direction:column}.filters{gap:6px}.filter{padding:9px 10px;font-size:8px}.sort{align-self:flex-end}.product-grid{gap:24px 12px}.product-info h3{font-size:17px}.product-info p{font-size:9px}.product-info .price{font-size:11px}.pill{top:7px;left:7px;font-size:7px;padding:6px}.wishlist{width:30px;height:30px;right:6px;top:6px}.quick{left:6px;right:6px;width:calc(100% - 12px);bottom:6px;padding:11px 3px;font-size:8px}.story{grid-template-columns:1fr}.story-image{min-height:360px}.story-copy{padding:55px 7%}.values{grid-template-columns:1fr;padding:45px 7%;gap:34px}.testimonial{padding:65px 6%}.newsletter h2{font-size:35px}.footer-grid{grid-template-columns:1fr 1fr;gap:26px 17px}.footer-grid>div:first-child{grid-column:1/-1}.copyright{flex-direction:column;line-height:1.8}.modal-box{grid-template-columns:1fr;max-height:88vh}.modal-image,.modal-image img{min-height:220px;height:220px}.modal-content{padding:24px}.modal-content h2{font-size:27px}.modal-content .btn{margin-top:10px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="announcement">A little luxury, beautifully wrapped · Complimentary gift packaging</div>
+<header>
+<button class="iconbtn menu-toggle" id="menuBtn" aria-label="Open navigation">☰</button>
+<a class="brand" href="#home">AURELLE<small>F I N E &nbsp; J E W E L R Y</small></a>
+<nav class="nav" id="nav">
+<a href="#collections">Collections</a><a href="#shop">Jewelry</a><a href="#story">Our story</a><a href="#newsletter">Journal</a>
+</nav>
+<div class="header-right">
+<button class="iconbtn" id="searchBtn" aria-label="Search products">⌕</button>
+<button class="iconbtn" id="cartBtn" aria-label="Open shopping bag">♧<span class="count" id="count">0</span></button>
+</div>
+</header>
+<div class="searchbar" id="searchbar"><input id="searchInput" type="search" placeholder="Search rings, necklaces, earrings..." aria-label="Search jewelry"><button id="searchGo">SEARCH</button></div>
+<main>
+<section class="hero" id="home">
+<div class="hero-content"><div class="kicker">The new expression of elegance</div><h1>Beauty in<br>every <em>detail.</em></h1><p>Jewelry that captures a feeling. Thoughtful silhouettes, golden finishes, and little luxuries that become part of your story.</p><a href="#shop" class="btn">Discover the collection <span>↗</span></a></div>
+<div class="hero-bottom"><span>Designed to be treasured</span><span>THE AURELLE EDIT · 001</span></div>
+</section>
+<section class="benefits">
+<div class="benefit"><span>✧</span>Thoughtfully designed</div><div class="benefit"><span>◇</span>Quality-first details</div><div class="benefit"><span>♧</span>Gift-ready packaging</div><div class="benefit"><span>♡</span>Made for your moments</div>
+</section>
+<section class="section" id="collections">
+<div class="section-head"><div class="kicker">Find your signature</div><h2>Curated for your kind of beautiful.</h2><p>Discover the little details that make a look entirely yours.</p></div>
+<div class="collections">
+<article class="collection"><img loading="lazy" src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=1100&q=85" alt="Elegant gold jewelry collection"><div class="collection-copy"><small>01 · Everyday icons</small><h3>Golden Hour</h3><a href="#shop" data-filter="Earrings">EXPLORE EARRINGS ↗</a></div></article>
+<article class="collection"><img loading="lazy" src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=850&q=85" alt="Fine rings in warm light"><div class="collection-copy"><small>02 · Little heirlooms</small><h3>Modern Muse</h3><a href="#shop" data-filter="Rings">DISCOVER RINGS ↗</a></div></article>
+<article class="collection"><img loading="lazy" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=850&q=85" alt="Pendant necklace on a neutral background"><div class="collection-copy"><small>03 · Close to heart</small><h3>Afterglow</h3><a href="#shop" data-filter="Necklaces">SHOP NECKLACES ↗</a></div></article>
+</div>
+</section>
+<section class="section shop-section" id="shop">
+<div class="section-head"><div class="kicker">The signature selection</div><h2>Pieces to fall for.</h2><p>Considered classics. Modern keepsakes. Your next favorite.</p></div>
+<div class="shopbar"><div class="filters" id="filters"><button class="filter active" data-category="All">All pieces</button><button class="filter" data-category="Rings">Rings</button><button class="filter" data-category="Earrings">Earrings</button><button class="filter" data-category="Necklaces">Necklaces</button><button class="filter" data-category="Bracelets">Bracelets</button></div>
+<select class="sort" id="sort" aria-label="Sort products"><option value="featured">Featured pieces</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name A–Z</option></select></div>
+<div class="product-grid" id="products"></div>
+<div class="center"><button class="btn" id="viewAll">Explore every piece <span>↗</span></button></div>
+</section>
+<section class="story" id="story">
+<div class="story-image" role="img" aria-label="Artful close-up of fine jewelry"></div>
+<div class="story-copy"><div class="kicker">The heart of AURELLE</div><h2>Not just what you wear.<br>What you remember.</h2><p>Some pieces become part of the person you are. A gift that says everything. A small ritual before a big day. A keepsake you reach for without thinking. We believe jewelry should feel personal, meaningful, and entirely your own.</p><a href="#collections" class="btn">Discover our world ↗</a></div>
+</section>
+<section class="values">
+<div class="value"><span>✧</span><h3>Thought over trend</h3><p>Considered designs with a timeless spirit, made to work with your own style.</p></div>
+<div class="value"><span>◇</span><h3>Details matter</h3><p>We celebrate the small details that turn a beautiful piece into a favorite.</p></div>
+<div class="value"><span>♡</span><h3>Made meaningful</h3><p>For celebrations, everyday moments, and everything worth remembering.</p></div>
+</section>
+<section class="testimonial"><div class="stars">★★★★★</div><blockquote>“The kind of jewelry that makes an ordinary day feel a little more extraordinary.”</blockquote><small>A NOTE FROM THE AURELLE COMMUNITY</small></section>
+<section class="newsletter" id="newsletter"><div class="kicker">Letters from AURELLE</div><h2>A little golden mail.</h2><p>New arrivals, thoughtful styling, and first looks at special collections.</p><form class="signup" id="signup"><input type="email" id="email" placeholder="Your email address" required aria-label="Your email address"><button type="submit">Join the list ↗</button></form></section>
+</main>
+<footer><div class="footer-grid">
+<div><div class="footer-brand">AURELLE</div><p>Jewelry for the moments that matter, and the everyday in between.</p><p>Thoughtfully chosen. Beautifully worn.</p><div class="socials"><a href="#newsletter" aria-label="Instagram">ig</a><a href="#newsletter" aria-label="Pinterest">p</a><a href="#newsletter" aria-label="TikTok">tk</a></div></div>
+<div><h4>Discover</h4><a href="#collections">Collections</a><a href="#shop">All jewelry</a><a href="#shop">Bestsellers</a><a href="#story">Our story</a></div>
+<div><h4>Customer care</h4><a href="#newsletter">Contact us</a><a href="#newsletter">Shipping information</a><a href="#newsletter">Returns & exchanges</a><a href="#newsletter">Jewelry care</a></div>
+<div><h4>The fine print</h4><a href="#newsletter">Privacy policy</a><a href="#newsletter">Terms of service</a><a href="#newsletter">FAQs</a><p>Here for your special moments.</p></div>
+</div><div class="copyright"><span>© 2026 AURELLE FINE JEWELRY. ALL RIGHTS RESERVED.</span><span>MADE WITH AN EYE FOR DETAIL.</span></div></footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Shopping bag"><div class="drawer-head"><h2>Your bag <span id="bagQty" style="font:12px 'DM Sans';color:var(--muted)"></span></h2><button class="close" id="closeCart" aria-label="Close bag">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-bottom" id="cartBottom"></div></aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Product details"><div class="modal-box"><button class="modal-close" id="closeModal" aria-label="Close product details">×</button><div class="modal-image"><img id="modalImg" src="" alt=""></div><div class="modal-content"><div class="stars">★★★★★ <span style="color:var(--muted)">Customer favorite</span></div><h2 id="modalName"></h2><div class="price" id="modalPrice"></div><p id="modalDesc"></p><p>Beautifully styled for everyday wear, celebrations, and thoughtful gifting.</p><button class="btn" id="modalAdd">Add to bag ↗</button></div></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const catalog=[
+{id:1,name:"Solstice Hoops",category:"Earrings",price:4200,tag:"Bestseller",desc:"Sculptural hoops with a warm, polished finish.",img:"https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=850&q=85"},
+{id:2,name:"The Heirloom Ring",category:"Rings",price:5600,tag:"Signature",desc:"A refined statement designed to be treasured.",img:"https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=850&q=85"},
+{id:3,name:"Luna Pendant",category:"Necklaces",price:3800,tag:"New arrival",desc:"A delicate pendant made for layering or wearing alone.",img:"https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=850&q=85"},
+{id:4,name:"Pearl Muse",category:"Earrings",price:4900,tag:"Loved",desc:"A fresh, modern take on a timeless pearl look.",img:"https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=850&q=85"},
+{id:5,name:"Golden Whisper",category:"Bracelets",price:3200,tag:"Everyday",desc:"An understated accent for your everyday edit.",img:"https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=850&q=85"},
+{id:6,name:"Celeste Ring",category:"Rings",price:6200,tag:"Editor's pick",desc:"Elegant lines and a little light for your hands.",img:"https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=850&q=85"},
+{id:7,name:"Sol Necklace",category:"Necklaces",price:4500,tag:"Bestseller",desc:"A versatile necklace with a graceful silhouette.",img:"https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=850&q=85"},
+{id:8,name:"The Lumière Cuff",category:"Bracelets",price:5200,tag:"Limited edit",desc:"A confident finishing touch with a refined shape.",img:"https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=850&q=85"}
+];
+let cart=JSON.parse(sessionStorage.getItem("aurelleCart")||"[]");
+let category="All",query="",modalId=null;
+const $=id=>document.getElementById(id);
+const money=n=>"Rs. "+n.toLocaleString("en-PK");
+function notify(msg){$("toast").textContent=msg;$("toast").classList.add("show");clearTimeout(notify.timer);notify.timer=setTimeout(()=>$("toast").classList.remove("show"),2300)}
+function visibleProducts(){let arr=catalog.filter(p=>(category==="All"||p.category===category)&&(p.name+" "+p.category+" "+p.desc).toLowerCase().includes(query.toLowerCase()));const sort=$("sort").value;if(sort==="low")arr.sort((a,b)=>a.price-b.price);if(sort==="high")arr.sort((a,b)=>b.price-a.price);if(sort==="name")arr.sort((a,b)=>a.name.localeCompare(b.name));return arr}
+function renderProducts(){const arr=visibleProducts();$("products").innerHTML=arr.length?arr.map(p=>`<article class="product"><div class="product-image"><img loading="lazy" src="${p.img}" alt="${p.name}"><span class="pill">${p.tag}</span><button class="wishlist" data-wish="${p.id}" aria-label="Add ${p.name} to wishlist">♡</button><button class="quick" data-quick="${p.id}">Quick view · Add to bag</button></div><div class="product-info"><div class="stars">★★★★★</div><h3>${p.name}</h3><p>${p.category} · AURELLE collection</p><div class="price">${money(p.price)}</div></div></article>`).join(""):'<p style="grid-column:1/-1;text-align:center;padding:50px;color:var(--muted)">No pieces found. Try another search.</p>'}
+function saveCart(){sessionStorage.setItem("aurelleCart",JSON.stringify(cart))}
+function addCart(id){let item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({id,qty:1});saveCart();renderCart();notify(catalog.find(p=>p.id===id).name+" added to your bag")}
+function changeQty(id,delta){const item=cart.find(x=>x.id===id);if(item)item.qty+=delta;cart=cart.filter(x=>x.qty>0);saveCart();renderCart()}
+function removeCart(id){cart=cart.filter(x=>x.id!==id);saveCart();renderCart()}
+function renderCart(){const count=cart.reduce((s,x)=>s+x.qty,0);$("count").textContent=count;$("bagQty").textContent=count?"("+count+")":"";if(!cart.length){$("cartItems").innerHTML='<div class="cart-empty">Your bag is waiting for something lovely.<br><br><a href="#shop" class="btn" id="emptyShop">Discover jewelry ↗</a></div>';$("cartBottom").innerHTML="";return}let total=0;$("cartItems").innerHTML=cart.map(x=>{const p=catalog.find(p=>p.id===x.id);if(!p)return"";total+=p.price*x.qty;return `<div class="cart-item"><img src="${p.img}" alt="${p.name}"><div><h3>${p.name}</h3><p>${money(p.price)}</p><div class="qty"><button data-minus="${p.id}" aria-label="Decrease quantity">−</button><span>${x.qty}</span><button data-plus="${p.id}" aria-label="Increase quantity">+</button></div></div><button class="remove" data-remove="${p.id}">Remove</button></div>`}).join("");$("cartBottom").innerHTML=`<div><span>Subtotal</span><strong>${money(total)}</strong></div><button class="btn" id="checkout">Continue to checkout ↗</button><p>Shipping and payment details are confirmed when checkout is connected. This storefront is currently a demo.</p>`}
+function openCart(){$("drawer").classList.add("open");$("overlay").classList.add("show");document.body.classList.add("lock")}
+function closeCart(){$("drawer").classList.remove("open");$("overlay").classList.remove("show");document.body.classList.remove("lock")}
+function openProduct(id){const p=catalog.find(p=>p.id===id);if(!p)return;modalId=id;$("modalImg").src=p.img;$("modalImg").alt=p.name;$("modalName").textContent=p.name;$("modalPrice").textContent=money(p.price);$("modalDesc").textContent=p.desc;$("modal").classList.add("show");document.body.classList.add("lock")}
+function closeProduct(){$("modal").classList.remove("show");document.body.classList.remove("lock")}
+$("products").addEventListener("click",e=>{const q=e.target.closest("[data-quick]");if(q){openProduct(Number(q.dataset.quick));return}const w=e.target.closest("[data-wish]");if(w){w.classList.toggle("selected");w.textContent=w.classList.contains("selected")?"♥":"♡";notify(w.classList.contains("selected")?"Saved to your favorites":"Removed from favorites")}});
+$("filters").addEventListener("click",e=>{const b=e.target.closest("[data-category]");if(!b)return;category=b.dataset.category;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));renderProducts()});
+$("sort").addEventListener("change",renderProducts);
+$("viewAll").addEventListener("click",()=>{category="All";query="";$("searchInput").value="";document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.category==="All"));renderProducts();$("shop").scrollIntoView({behavior:"smooth"})});
+document.querySelectorAll("[data-filter]").forEach(a=>a.addEventListener("click",()=>{category=a.dataset.filter;document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.category===category));renderProducts()}));
+$("cartBtn").onclick=openCart;$("closeCart").onclick=closeCart;$("overlay").onclick=closeCart;
+$("cartItems").addEventListener("click",e=>{const m=e.target.closest("[data-minus]"),p=e.target.closest("[data-plus]"),r=e.target.closest("[data-remove]");if(m)changeQty(+m.dataset.minus,-1);if(p)changeQty(+p.dataset.plus,1);if(r)removeCart(+r.dataset.remove)});
+$("cartBottom").addEventListener("click",e=>{if(e.target.id==="checkout")notify("Demo checkout only — connect a payment provider before accepting orders.")});
+$("modalAdd").onclick=()=>{if(modalId!==null)addCart(modalId);closeProduct()};
+$("closeModal").onclick=closeProduct;$("modal").addEventListener("click",e=>{if(e.target===$("modal"))closeProduct()});
+$("searchBtn").onclick=()=>{$("searchbar").classList.toggle("open");if($("searchbar").classList.contains("open"))$("searchInput").focus()};
+function runSearch(){query=$("searchInput").value.trim();category="All";document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x.dataset.category==="All"));renderProducts();$("shop").scrollIntoView({behavior:"smooth"})}
+$("searchGo").onclick=runSearch;$("searchInput").addEventListener("keydown",e=>{if(e.key==="Enter")runSearch();if(e.key==="Escape"){$("searchbar").classList.remove("open");$("searchInput").value="";query="";renderProducts()}});
+$("menuBtn").onclick=()=>$("nav").classList.toggle("open");$("nav").querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>$("nav").classList.remove("open")));
+$("signup").addEventListener("submit",e=>{e.preventDefault();notify("Thank you for your interest in AURELLE! Newsletter signup needs a connected service.");e.target.reset()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeProduct();$("nav").classList.remove("open");$("searchbar").classList.remove("open")}});
+renderProducts();renderCart();
+</script>
+</body>
+</html>
